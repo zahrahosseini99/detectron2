@@ -57,7 +57,6 @@ def flop_count_operators(
     Implement operator-level flops counting using jit.
     This is a wrapper of fvcore.nn.flop_count, that supports standard detection models
     in detectron2.
-
     Note:
         The function runs the input through the model to compute flops.
         The flops of a detection model is often input-dependent, for example,
@@ -65,7 +64,6 @@ def flop_count_operators(
         the number of detected objects.
         Therefore, the flops counting using a single input may not accurately
         reflect the computation cost of a model.
-
     Args:
         model: a detectron2 model that takes `list[dict]` as input.
         inputs (list[dict]): inputs to model, in detectron2's standard format.
@@ -80,13 +78,11 @@ def activation_count_operators(
     Implement operator-level activations counting using jit.
     This is a wrapper of fvcore.nn.activation_count, that supports standard detection models
     in detectron2.
-
     Note:
         The function runs the input through the model to compute activations.
         The activations of a detection model is often input-dependent, for example,
         the activations of box & mask head depends on the number of proposals &
         the number of detected objects.
-
     Args:
         model: a detectron2 model that takes `list[dict]` as input.
         inputs (list[dict]): inputs to model, in detectron2's standard format.
